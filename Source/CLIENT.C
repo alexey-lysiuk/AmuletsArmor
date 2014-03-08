@@ -1733,6 +1733,9 @@ T_void ClientHandleKeyboard(E_keyboardEvent event, T_word16 scankey)
                                 sprintf(buf,
                                         "Free memory = <unknown for windows>");
                                 MessageAdd(buf);
+#elif defined __APPLE__
+                                strncpy(buf, "Free memory = <unknown for OS X>", sizeof(buf));
+                                MessageAdd(buf);
 #else
                                 T_word32 memInfo[12];
                                 union REGS regs;

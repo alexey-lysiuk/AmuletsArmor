@@ -66,6 +66,8 @@
     #else
         #include "Generic\NODTALK.C"
     #endif
+#elif defined __APPLE__
+    #include "Generic/NODTALK.C"
 #else
     #include "DOS\DOSDTALK.C"
 #endif

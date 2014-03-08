@@ -2805,7 +2805,7 @@ T_void GrInvalidateRectClipped(
     DebugEnd() ;
 }
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
 T_void DrawTranslucentAsm(
            T_byte8 *p_source,
            T_byte8 *p_destination,

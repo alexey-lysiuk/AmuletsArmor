@@ -29,6 +29,13 @@ typedef time_t T_time;
 #  include <math.h>
 #endif
 
+#ifdef __APPLE__
+#  include <stdio.h>
+#  include <stdlib.h>
+#  include <string.h>
+#  include <math.h>
+#endif // __APPLE__
+
 /** If under GCC, we need to specify that our packet structures are **/
 /** packed. **/
 #ifdef __GNUC__

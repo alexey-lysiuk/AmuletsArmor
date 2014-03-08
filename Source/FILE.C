@@ -11,8 +11,8 @@
  *
  *<!-----------------------------------------------------------------------*/
 #include <fcntl.h>
-#include <sys\stat.h>
-#include <sys\types.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <io.h>
 #include "FILE.H"
 #include "MEMORY.H"
@@ -271,6 +271,18 @@ T_word32 FileGetSize(T_byte8 *p_filename)
     fp = fopen(p_filename, "rb");
     if (fp) {
         size = filelength(fileno(fp));
+        fclose(fp);
+    } else {
+        size = 0;
+    }
+    DebugEnd() ;
+#elif defined __APPLE__
+    FILE *fp;
+
+    DebugRoutine("FileGetSize");
+    fp = fopen(p_filename, "r");
+    if (fp) {
+        size = fseek(fp, SEEK_END, 0);
         fclose(fp);
     } else {
         size = 0;

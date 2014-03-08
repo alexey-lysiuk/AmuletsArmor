@@ -182,6 +182,7 @@ static T_void IShowScreenNextPage (E_mouseEvent event,
     DebugEnd();
 }
 
+#ifdef COMPILE_OPTION_COPY_PROTECTION_ON
 T_void CheckCopyProtection(T_void)
 {
     T_file file ;
@@ -231,6 +232,7 @@ T_void CheckCopyProtection(T_void)
 
     DebugEnd() ;
 }
+#endif // COMPILE_OPTION_COPY_PROTECTION_ON
 
 //#define PULL_OUT
 
@@ -280,7 +282,7 @@ T_void PullOut(T_void)
 }
 #endif
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
 T_void game_main(T_word16 argc, char *argv[])
 #else
 T_void main(T_word16 argc, char *argv[])

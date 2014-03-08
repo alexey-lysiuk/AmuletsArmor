@@ -205,6 +205,13 @@
 #define _enable()
 #endif
 
+#ifdef __APPLE__
+#include <SDL.h>
+#define delay(x) if (x < 14) { SDL_Delay(14); } else { SDL_Delay(x); }
+#define _disable()
+#define _enable()
+#endif // __APPLE__
+
 #endif
 
 /****************************************************************************/

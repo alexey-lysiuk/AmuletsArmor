@@ -643,7 +643,7 @@ printf("!F %d %s:%s\n", p_header->size, DebugGetCallerFile(), DebugGetCallerName
  *<!-----------------------------------------------------------------------*/
 T_void MemDumpDiscarded(T_void)
 {
-#ifndef REAL_MODE
+#if !defined REAL_MODE && !defined __APPLE__
     FILE *fp ;
     T_memBlockHeader *p_header ;
 //extern T_word32 G_packetsAlloc ;

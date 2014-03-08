@@ -70,7 +70,7 @@ static T_word32 G_musicPos = 0 ;
 static E_Boolean G_musicNeedsUpdate = FALSE ;
 #endif
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
 #define MAX_SOUND_CHANNELS 32
 #define BUFFER_ID_BAD ((T_word16)0xFFFF)
 #endif
