@@ -711,7 +711,7 @@ T_void GrGraphicsOn(T_void)
     IResetLeftsAndRights() ;
 
     DebugEnd() ;
-#elif defined(WIN32)
+#elif defined(WIN32) || defined (__APPLE__)
     DebugRoutine("GrGraphicsOn") ;
     DebugCheck(G_GraphicsIsOn == FALSE) ;
     G_GraphicsIsOn = TRUE ;
