@@ -93,7 +93,7 @@ static T_doubleLinkList G_eventStack = DOUBLE_LINK_LIST_BAD ;
 
 static T_word16 G_pauseLevel = 0 ;
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
 char G_keyboardToASCII[256] = {
      '\0',  '\0',  '1',   '2',   '3',   '4',   '5',   '6',
      '7',   '8',   '9',   '0',   '-',   '=',   '\b',  '\t',
@@ -974,7 +974,7 @@ E_Boolean KeyboardBufferReady(T_void)
 
 
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
 
 // This maps the SDL keysym list to the list of scancodes in the original game
 const uint8_t G_sdlToScancode[] = {

@@ -48,7 +48,7 @@ static T_sword16 G_mouseAtY ;
 static T_word16 G_textureSideNum ;
 #endif
 
-#if defined(WIN32)
+#if defined(WIN32) || defined __APPLE__
 /*
 T_sword32 MultAndShift4(
            T_sword32 a,

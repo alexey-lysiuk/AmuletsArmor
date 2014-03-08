@@ -325,7 +325,11 @@ extern void SleepMS(T_word32 sleepMS);
         exit(1) ;
     }
 
-#ifndef WIN32
+#ifdef __APPLE__
+    // TODO: OS X and Xcode may add some command line parameters
+    // So usage like on DOS/Win is not working properly
+    handle = 0;
+#elif !defined WIN32
     if (argc != 2)  {
         puts("USAGE: GAME <Direct Talk Handle>") ;
         DebugEnd() ;
