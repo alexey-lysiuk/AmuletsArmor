@@ -220,7 +220,7 @@ typedef struct  {
     T_sword16 rows           PACK;
 
 /** The GCC parser will not allow empty array decls. **/
-#ifdef __GNUC__
+#if defined __GNUC__ && !defined __clang__
     T_word16 blockIndexes[1] PACK;
 #else
     T_word16 blockIndexes[];

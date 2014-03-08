@@ -29,7 +29,7 @@ typedef struct {
     T_word16 sizey ;
 
 /** Due to the parser of GCC, we must gracefully make this kludge. **/
-#ifdef __GNUC__
+#if defined __GNUC__ && !defined __clang__
     T_byte8 data[1] ;
 #else
     T_byte8 data[];
@@ -45,7 +45,7 @@ typedef struct {
    T_byte8 widths[256] ;
 
 /** Again, GCC will not take subscriptless values. **/
-#ifdef __GNUC__
+#if defined __GNUC__ && !defined __clang__
    T_byte8 p_data[1] ;
 #else
    T_byte8 p_data[];
