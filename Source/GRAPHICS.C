@@ -1096,7 +1096,7 @@ T_void GrSetPalette(
     TICKER_TIME_ROUTINE_ENDM("GrSetPalette", 1000)
 #endif
 
-#ifdef WIN32
+#if defined WIN32 || defined __APPLE__
         extern void _cdecl WindowsUpdate(char *p_screen, unsigned char *palette);
     T_word16 i ;
     /* See if the palette is changing. */

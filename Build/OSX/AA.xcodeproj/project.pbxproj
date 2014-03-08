@@ -1106,6 +1106,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					NO_ASSEMBLY,
+					"_cdecl=",
 					"near=",
 					"far=",
 					"huge=",
@@ -1141,6 +1142,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					NO_ASSEMBLY,
+					"_cdecl=",
 					"near=",
 					"far=",
 					"huge=",
